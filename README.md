@@ -7,10 +7,11 @@ Omxplayer is a video player that can decode h264 video file.
 Omxplayer-sync is a tool to synchronize over the network omxplayer instances.
 
 ### Name
-A Raspberry is named : *DRK-1_XX*, XX being its number. Ex : DRK-1_01
+A Raspberry is named : *DRK-1-XX*, XX being its number. Ex : DRK-1-5
 To change a name you have to :
  - Set it in /etc/hostname
  - Set it in /etc/hosts
+ - Execute /etc/init.d/hostname.sh
  - Reboot
  
 ### IP
