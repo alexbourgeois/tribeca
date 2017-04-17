@@ -40,3 +40,5 @@ So actually, at each loop some raspberries will synchronize and some won't. They
 Show DRK-1 number : hostname | awk -F "-" '{print $3}'
 
 Access Windows shared folder : sudo mount -t cifs -o username=Tie\ Striker,password=xxxx //192.168.1.254/AllVideo /mnt/win
+
+Copy the good video from windows shared folder : sudo cp -v /mnt/win/video$(hostname | awk -F "-" '{print $3}').mp4 /home/pi/video/video.mp4
