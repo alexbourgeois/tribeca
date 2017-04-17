@@ -3,8 +3,8 @@ This project consists in synchronizing a video on 20 Raspberry.
 
 ## Configuration
 Flash the ROM on your SD Card, we use Raspbian Jessie lite version, omxplayer, omxplayer-sync and their dependencies.
-Omxplayer is a video player that can decode h264 video file.
-Omxplayer-sync is a tool to synchronize over the network omxplayer instances.
+Omxplayer is a video player that can decode h264 video file : https://github.com/popcornmix/omxplayer.
+Omxplayer-sync is a tool to synchronize over the network omxplayer instances : https://github.com/turingmachine/omxplayer-sync.
 
 ### Name
 A Raspberry is named : *DRK-1-XX*, XX being its number. Ex : DRK-1-5
