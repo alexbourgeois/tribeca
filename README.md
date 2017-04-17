@@ -31,6 +31,9 @@ To launch the system you have to be connected via SSH to all the rapsberry.
 Simply type the command *omxplayer-sync -lu /path/to/your/video.mp4" on all raspberry except one (which will be the master). This will start all the slaves.
 On the last raspberry type : *omxplayer-sync -mu /path/to/your/video.mp4* and they will synchronize each other.
 
+## OMXPlayer-Sync
+Actual cofiguration : JUMP_AHEAD = GRACE_TIME = 2, TOLERANCE = 1, maxlength(queue)=4, sleepMaster = 0.3
+
 ## Issues
 Over several test we can say that even if all raspberries are the same (they are clone), they don't act the same. A command launched at the same time on all of them will execute with a delay on each and it is not predictable.
 
