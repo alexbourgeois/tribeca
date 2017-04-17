@@ -35,3 +35,8 @@ On the last raspberry type : *omxplayer-sync -mu /path/to/your/video.mp4* and th
 Over several test we can say that even if all raspberries are the same (they are clone), they don't act the same. A command launched at the same time on all of them will execute with a delay on each and it is not predictable.
 
 So actually, at each loop some raspberries will synchronize and some won't. They start synchronizing around 6sec because of variable on the code, this is the smallest value acceptable. A lower value will result in more sync over time.
+
+## Tools
+Show DRK-1 number : hostname | awk -F "-" '{print $3}'
+
+Access Windows shared folder : sudo mount -t cifs -o username=Tie\ Striker,password=xxxx //192.168.1.254/AllVideo /mnt/win
