@@ -40,10 +40,12 @@ Over several test we can say that even if all raspberries are the same (they are
 So actually, at each loop some raspberries will synchronize and some won't. They start synchronizing around 6sec because of variable on the code, this is the smallest value acceptable. A lower value will result in more sync over time.
 
 ## Tools
-Show DRK-1 number : hostname | awk -F "-" '{print $3}'
+Show DRK-1 number : **hostname | awk -F "-" '{print $3}'**
 
-Access Windows shared folder : sudo mount -t cifs -o username=Tie\ Striker,password=xxxx //192.168.1.254/AllVideo /mnt/win
+Access Windows shared folder : **sudo mount -t cifs -o username=Tie\ Striker,password=xxxx //192.168.1.254/AllVideo /mnt/win**
 
-Copy the good video from windows shared folder : sudo cp -v /mnt/win/video$(hostname | awk -F "-" '{print $3}').mp4 /home/pi/video/video.mp4
+Copy the good video from windows shared folder : **sudo cp -v /mnt/win/video$(hostname | awk -F "-" '{print $3}').mp4 /home/pi/video/video.mp4**
+
+Count sync : **grep -F "jump" logFile | wc -l**
 
 Supervisor : https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps
