@@ -45,3 +45,5 @@ Show DRK-1 number : hostname | awk -F "-" '{print $3}'
 Access Windows shared folder : sudo mount -t cifs -o username=Tie\ Striker,password=xxxx //192.168.1.254/AllVideo /mnt/win
 
 Copy the good video from windows shared folder : sudo cp -v /mnt/win/video$(hostname | awk -F "-" '{print $3}').mp4 /home/pi/video/video.mp4
+
+Supervisor : https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps
