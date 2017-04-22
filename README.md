@@ -34,18 +34,22 @@ On the last raspberry type : *omxplayer-sync -mu /path/to/your/video.mp4* and th
 ## OMXPlayer-Sync
 Actual cofiguration : JUMP_AHEAD = GRACE_TIME = 2, TOLERANCE = 1, maxlength(queue)=4, sleepMaster = 0.3
 
+## Tools
+Show DRK-1 number : *hostname | awk -F "-" '{print $3}'*
+
+Access Windows shared folder : *sudo mount -t cifs -o username=Tie\ Striker,password=xxxx //192.168.1.254/AllVideo /mnt/win*
+
+Copy the good video from windows shared folder : *sudo cp -v /mnt/win/video$(hostname | awk -F "-" '{print $3}').mp4 /home/pi/video/video.mp4*
+
+Count sync : *grep -F "jump" logFile | wc -l*
+
+Supervisor : https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps
+
 ## Issues
 Over several test we can say that even if all raspberries are the same (they are clone), they don't act the same. A command launched at the same time on all of them will execute with a delay on each and it is not predictable.
 
 So actually, at each loop some raspberries will synchronize and some won't. They start synchronizing around 6sec because of variable on the code, this is the smallest value acceptable. A lower value will result in more sync over time.
 
-## Tools
-Show DRK-1 number : **hostname | awk -F "-" '{print $3}'**
+### White flash at video end
 
-Access Windows shared folder : **sudo mount -t cifs -o username=Tie\ Striker,password=xxxx //192.168.1.254/AllVideo /mnt/win**
-
-Copy the good video from windows shared folder : **sudo cp -v /mnt/win/video$(hostname | awk -F "-" '{print $3}').mp4 /home/pi/video/video.mp4**
-
-Count sync : **grep -F "jump" logFile | wc -l**
-
-Supervisor : https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps
+This bug is random and caused by the omxplayer buffer, increase it **can** (not sure) solve the issue. Another solution is to use an older omxplayer version which seem to don't have this problem (ex : https://github.com/jehutting/omxplayer). Popcornmix stopped working on this issue because that's a really weird one and which might be caused by hardware.
